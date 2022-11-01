@@ -21,53 +21,43 @@ namespace Weather
     /// </summary>
     public partial class MainWindow : Window
     {
-        public String namecity;
-        public static string selectedCity;
+        public string city;
+        public string someWeather = "sun";
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            selectedCity = Cities.SelectedValue.ToString();
-            switch (selectedCity)
-            {
-                case "Москва":
-                    namecity = "Moscow";
-                    break;
-                case "Владимир":
-                    namecity = "Vladimir";
-                    break;
-                case "Санкт - Петербург":
-                    namecity = "Saint Petersburg";
-                    break;
-                case "Екатеринбург":
-                    namecity = "Ekaterinburg";
-                    break;
-                case "Иваново":
-                    namecity = "Ivanovo";
-                    break;
-                case "Псков":
-                    namecity = "Pskov";
-                    break;
-                case "Тверь":
-                    namecity = "Tver'";
-                    break;
-                case "Смоленск":
-                    namecity = "Smolensk";
-                    break;
-                case "Сочи":
-                    namecity = "Sochi";
-                    break;
-            }
-        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 window1 = new Window1();
-            window1.cityname = namecity;
+            //window1.SomeClass = Vivod.VivodWeather(city);
+            switch (someWeather)
+            {
+                case "clouds":
+                    window1.Background = new ImageBrush(new BitmapImage(new Uri("Resourses\\Sky\\CloudBackGround.png", UriKind.Relative)));
+                    break;
+                case "rain":
+                    window1.Background = new ImageBrush(new BitmapImage(new Uri("Resourses\\Sky\\RainBackGround.png", UriKind.Relative)));
+                    break;
+                case "snow":
+                    window1.Background = new ImageBrush(new BitmapImage(new Uri("Resourses\\Sky\\SnowBackGround.png", UriKind.Relative)));
+                    break;
+                default:
+                    window1.Background = new ImageBrush(new BitmapImage(new Uri("Resourses\\Sky\\SunBackGround.png", UriKind.Relative)));
+                    break;
+            }
             window1.Show();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (CityNameBox.Text == String.Empty)
+                SelectButton.IsEnabled = false;
+            else if (!SelectButton.IsEnabled)
+                SelectButton.IsEnabled = true;
+            city = CityNameBox.Text;
         }
     }
 }

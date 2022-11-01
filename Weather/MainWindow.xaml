@@ -6,20 +6,17 @@
         xmlns:local="clr-namespace:Weather"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Weather.MainWindow"
         mc:Ignorable="d"
-        Title="Выбор" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
+        Title="Выбор" Height="300" Width="500" ResizeMode="CanResizeWithGrip" MinHeight="200" MinWidth="350">
+    <Window.Background>
+        <ImageBrush ImageSource="/Resourses/BackGroundMenu.png"/>
+    </Window.Background>
     <Grid>
-        <Button Content="Выбрать" HorizontalAlignment="Center" Margin="0,242,0,0" VerticalAlignment="Top" Click="Button_Click"/>
-        <ComboBox x:Name="Cities" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ComboBox_SelectionChanged">
-            <System:String>Тверь</System:String>
-            <System:String>Иваново</System:String>
-            <System:String>Москва</System:String>
-            <System:String>Владимир</System:String>
-            <System:String>Санкт - Петербург</System:String>
-            <System:String>Псков</System:String>
-            <System:String>Смоленск</System:String>
-            <System:String>Екатеринбург</System:String>
-            <System:String>Сочи</System:String>
-        </ComboBox>
-
+        <Button x:Name="SelectButton" Style="{DynamicResource ButtonStyle}" Content="Узнать погоду" Click="Button_Click" Height="45" Width="210" Margin="0,100,0,0" VerticalAlignment="Center" IsEnabled="False" FontFamily="Cambria" FlowDirection="LeftToRight" VerticalContentAlignment="Center" />
+        <TextBox Style="{DynamicResource TextBoxStyle}" FontFamily="Cambria" x:Name="CityNameBox" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="320" Height="60" TextChanged="TextBox_TextChanged" FontSize="38" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectionBrush="#B2DAFF00" SelectionTextBrush="{x:Null}" BorderThickness="0,0,0,0" Margin="0,0,0,40">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/Resourses/TextBox.png"/>
+            </TextBox.Background>
+        </TextBox>
+        <Image HorizontalAlignment="Center" Margin="0,0,300,160" VerticalAlignment="Center" Source="/Resourses/Gorod.png" Height="82" Width="123"/>
     </Grid>
 </Window>

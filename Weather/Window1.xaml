@@ -5,17 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Weather"
         mc:Ignorable="d"
-        Title="Погода" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Погода" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.Background>
+        <ImageBrush ImageSource="/Resourses/Sky/CloudBackGround.png"/>
+    </Window.Background>
+
     <Canvas>
-        <Label x:Name ="label1" Content="Label" HorizontalAlignment="Left" Height="30" Canvas.Left="205" Canvas.Top="134"/>
-        <Label x:Name ="label2" Content="Label" HorizontalAlignment="Left" Height="30" Canvas.Left="205" Canvas.Top="166"/>
-        <Label x:Name ="label3" Content="Label" HorizontalAlignment="Left" Height="30" Canvas.Left="205" Canvas.Top="204"/>
-        <Label x:Name ="label4" Content="Label" HorizontalAlignment="Left" Height="30" Canvas.Left="483" Canvas.Top="166"/>
-        <Label x:Name ="label5" Content="Label" HorizontalAlignment="Left" Height="30" Canvas.Left="483" Canvas.Top="204"/>
-        <Label x:Name ="label6" Content="Label" HorizontalAlignment="Left" Height="30" Canvas.Left="37" Canvas.Top="302"/>
-        <Label x:Name ="label7" Content="Label" HorizontalAlignment="Left" Height="30" Canvas.Left="37" Canvas.Top="337"/>
-        <Label x:Name ="label8" Content="Label" HorizontalAlignment="Left" Height="30" Canvas.Left="381" Canvas.Top="63"/>
-        <Label x:Name ="label9" Content="Ветер" HorizontalAlignment="Left" Height="30" Canvas.Left="37" Canvas.Top="267"/>
+        <Label Style="{DynamicResource ParametersLabelStyle}" FontSize="18" x:Name ="label1" Content="Загрузка" HorizontalAlignment="Left" Height="40" Canvas.Left="203" Canvas.Top="114" Width="90" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" VerticalAlignment="Top"/>
+        <Label Style="{DynamicResource ParametersLabelStyle}" FontSize="18" x:Name ="label2" Content="Погода" HorizontalAlignment="Left" Height="40" Canvas.Left="203" Canvas.Top="159" VerticalAlignment="Top" />
+        <Label Style="{DynamicResource ParametersLabelStyle}" FontSize="18" x:Name ="label3" Content="Температура&#xD;&#xA;" HorizontalAlignment="Left" Height="40" Canvas.Left="203" Canvas.Top="204" VerticalAlignment="Top"/>
+        <Label Style="{DynamicResource ParametersLabelStyle}" FontSize="18" x:Name ="label4" Content="Влажность" HorizontalAlignment="Left" Height="40" Canvas.Left="508" Canvas.Top="155" VerticalAlignment="Top"/>
+        <Label Style="{DynamicResource ParametersLabelStyle}" FontSize="18" x:Name ="label5" Content="Давление" HorizontalAlignment="Left" Height="40" Canvas.Left="508" Canvas.Top="204" VerticalAlignment="Top"/>
+        <Label Style="{DynamicResource ParametersLabelStyle}" FontSize="18" x:Name ="label6" Content="Скорость&#xD;&#xA;" HorizontalAlignment="Center" Height="40" Canvas.Left="37" Canvas.Top="312" VerticalAlignment="Top"/>
+        <Label Style="{DynamicResource ParametersLabelStyle}" FontSize="18" x:Name ="label7" Content="Направление" HorizontalAlignment="Center" Height="40" Canvas.Left="37" Canvas.Top="357" VerticalAlignment="Top"/>
+        <Label Style="{DynamicResource CityNameLabelStyle}" x:Name ="label8" Content="Город&#xD;&#xA;" HorizontalAlignment="Center" Height="70" FontSize="36" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Canvas.Left="212" Canvas.Top="22" Width="376"/>
+        <Label Style="{DynamicResource ParametersLabelStyle}" FontSize="18" x:Name ="label9" Content="Ветер" HorizontalAlignment="Left" Height="40" Canvas.Left="37" Canvas.Top="267" Width="120" VerticalContentAlignment="Top" HorizontalContentAlignment="Center" VerticalAlignment="Center"/>
         <StackPanel Name="panel1" Width="150" Height="150" Canvas.Left="37" Canvas.Top="106">
             <StackPanel.Background>
                 <ImageBrush/>

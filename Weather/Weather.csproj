@@ -80,11 +80,16 @@
     <Compile Include="main.cs" />
     <Compile Include="OpenWeather.cs" />
     <Compile Include="sys.cs" />
+    <Compile Include="Vivod.cs" />
     <Compile Include="weather.cs" />
     <Compile Include="wind.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="Dictionary1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -129,5 +134,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+<ItemGroup>
+    <Content Include="Resourses\**">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+</ItemGroup>
+  
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
 </Project>
