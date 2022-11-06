@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather
 {
-    internal class main
+    public class main
     {
         private double _temp;
 

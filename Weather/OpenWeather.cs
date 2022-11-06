@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Weather
 {
-    internal class OpenWeather
+    public class OpenWeather
     {
         public coord coord;
 

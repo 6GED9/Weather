@@ -8,7 +8,7 @@ using System.Windows.Media.Imaging;
 
 namespace Weather
 {
-    internal class weather
+    public class weather
     {
         public int id;
 

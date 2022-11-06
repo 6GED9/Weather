@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather
 {
-    internal class wind
+    public class wind
     {
         public double speed;
 

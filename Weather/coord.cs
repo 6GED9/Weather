@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather
 {
-    internal class coord
+    public class coord
     {
         public double lon;
 

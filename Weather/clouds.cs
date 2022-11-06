@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather
 {
-    internal class clouds
+    public class clouds
     {
         public double all;
     }

@@ -20,33 +20,36 @@ namespace Weather
     class Vivod
     {
         public static ImageBrush ib = new ImageBrush();
-        public static Weather.OpenWeather oW;
-        public static async void VivodWeather(string cityname)
+        public static OpenWeather oW;
+        public static void VivodWeather(string cityname)
         {
-            WebRequest request = WebRequest.Create($"https://api.openweathermap.org/data/2.5/weather?q={cityname}&appid=6ec4258c723eade120938ef456405434&lang=ru");
-
-            request.Method = "POST";
-
-            request.ContentType = "application/x-www-urlencoded";
-
-            WebResponse response = await request.GetResponseAsync();
-
-            string answer = string.Empty;
-
-            using (Stream s = response.GetResponseStream())
+            try
             {
-                using (StreamReader reader = new StreamReader(s))
+                WebRequest request = WebRequest.Create($"https://api.openweathermap.org/data/2.5/weather?q={cityname}&appid=6ec4258c723eade120938ef456405434&lang=ru");
+
+                request.Method = "POST";
+
+                request.ContentType = "application/x-www-urlencoded";
+
+
+                WebResponse response = request.GetResponse();
+
+                string answer = string.Empty;
+
+                using (Stream s = response.GetResponseStream())
                 {
-                    answer = await reader.ReadToEndAsync();
+                    using (StreamReader reader = new StreamReader(s))
+                    {
+                        answer = reader.ReadToEnd();
+                    }
                 }
+                response.Close();
+                oW = JsonConvert.DeserializeObject<OpenWeather>(answer);
+                ib.ImageSource = oW.weather[0].Icon;
             }
-            response.Close();
-            oW = JsonConvert.DeserializeObject<Weather.OpenWeather>(answer);
-            ib.ImageSource = oW.weather[0].Icon;
-            Ow();
-            Image();
+            catch (Exception ex) { MessageBox.Show("Что-то пошло не так, повторите попытку позже", "Ошибка");  }
         }
-        public static Weather.OpenWeather Ow() { return oW; }
-        public static ImageBrush Image() { return ib; }
+        public static OpenWeather ReturnWeather() { return oW; }
+        public static ImageBrush ReturnImage() { return ib; }
     }
 }

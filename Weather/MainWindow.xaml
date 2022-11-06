@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:Weather"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Weather.MainWindow"
         mc:Ignorable="d"
-        Title="Выбор" Height="300" Width="500" ResizeMode="CanResizeWithGrip" MinHeight="200" MinWidth="350">
+        Title="Выбор" Height="300" Width="500" ResizeMode="CanResizeWithGrip" MinHeight="200" MinWidth="350"
+        WindowStartupLocation="CenterScreen">
+
     <Window.Background>
         <ImageBrush ImageSource="/Resourses/BackGroundMenu.png"/>
     </Window.Background>

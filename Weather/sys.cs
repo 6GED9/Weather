@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Weather
 {
-    internal class sys
+    public class sys
     {
         public double type;
 

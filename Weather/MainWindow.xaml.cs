@@ -32,22 +32,8 @@ namespace Weather
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Window1 window1 = new Window1();
-            //window1.SomeClass = Vivod.VivodWeather(city);
-            switch (someWeather)
-            {
-                case "clouds":
-                    window1.Background = new ImageBrush(new BitmapImage(new Uri("Resourses\\Sky\\CloudBackGround.png", UriKind.Relative)));
-                    break;
-                case "rain":
-                    window1.Background = new ImageBrush(new BitmapImage(new Uri("Resourses\\Sky\\RainBackGround.png", UriKind.Relative)));
-                    break;
-                case "snow":
-                    window1.Background = new ImageBrush(new BitmapImage(new Uri("Resourses\\Sky\\SnowBackGround.png", UriKind.Relative)));
-                    break;
-                default:
-                    window1.Background = new ImageBrush(new BitmapImage(new Uri("Resourses\\Sky\\SunBackGround.png", UriKind.Relative)));
-                    break;
-            }
+            Vivod.VivodWeather(city);
+            window1.CityLabel.Content = city;
             window1.Show();
         }
 
